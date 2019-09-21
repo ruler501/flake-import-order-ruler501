@@ -12,22 +12,22 @@ def readme():
 
 
 setup(
-    name="flake8-import-order-grok",
-    version="0.3.1",
-    author="Grok Learning",
-    author_email="opensource@groklearning.com",
-    description="Grok Learning's flake8-import-order plugin.",
+    name="flake8-import-order-ruler501",
+    version="0.18.1",
+    author="ruler501",
+    author_email="ruler501@ruler501.com",
+    description="ruler501's flake8-import-order plugin.",
     long_description=readme(),
     long_description_content_type="text/markdown",
-    keywords="flake8-import-order grok",
+    keywords="flake8-import-order ruler501",
     license="MIT",
-    url="https://github.com/groklearning/flake8-import-order-grok",
-    packages=["flake8_import_order_grok"],
-    python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+    url="https://github.com/ruler501/flake8-import-order-ruler501",
+    packages=["flake8_import_order_ruler501"],
+    python_requires=">=3.4",
     install_requires=["flake8-import-order>=0.18"],
     entry_points={
         "flake8_import_order.styles": [
-            "grok = flake8_import_order_grok:GrokImportOrderStyle"
+            "ruler501 = flake8_import_order_ruler501:Ruler501ImportOrderStyle"
         ]
     },
     classifiers=[
@@ -36,7 +36,6 @@ setup(
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
