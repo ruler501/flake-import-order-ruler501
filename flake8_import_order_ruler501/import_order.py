@@ -32,8 +32,8 @@ class Ruler501ImportOrderStyle(Style):
         if import_.type in (ImportType.FUTURE, ImportType.STDLIB):
             return (
                 import_.type,
-                package,
                 import_.is_from,
+                package,
                 import_.level,
                 import_.modules,
                 import_.names,
@@ -86,7 +86,7 @@ class Ruler501ImportOrderStyle(Style):
             return NAME_TYPE_CLASS if name[0].isupper() else NAME_TYPE_FUNCTION
         
     def _check(self, previous_import, previous, current_import):
-        yield from super(Ruler501ImportOrderStyle)._check(self, previous_import, previous, current_import)
+        yield from super(Ruler501ImportOrderStyle, self)._check(previous_import, previous, current_import)
         seen = set()
         for name in current_import.names:
             value = self.to_category(name)
