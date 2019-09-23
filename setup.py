@@ -12,7 +12,7 @@ def readme():
 
 setup(
     name="flake8-import-order-ruler501",
-    version="0.18.1",
+    version="0.18.1.1",
     author="ruler501",
     author_email="ruler501@ruler501.com",
     description="ruler501's flake8-import-order plugin.",
