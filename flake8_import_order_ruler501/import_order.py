@@ -29,6 +29,7 @@ class Ruler501ImportOrderStyle(Style):
     @staticmethod
     def import_key(import_):
         package = None if import_.package is None else import_.package.lower()
+        print(import_.type, import_.is_from, package, import_.level, import_.modules, import_.names)
         if import_.type in (ImportType.FUTURE, ImportType.STDLIB):
             return (
                 import_.type,
