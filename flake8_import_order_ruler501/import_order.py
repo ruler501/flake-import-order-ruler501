@@ -28,34 +28,20 @@ class Ruler501ImportOrderStyle(Style):
     """
     @staticmethod
     def import_key(import_):
-        package = None if import_.package is None else import_.package.lower()
-        if import_.type in (ImportType.FUTURE, ImportType.STDLIB):
-            return (
-                import_.type,
-                import_.is_from,
-                package,
-                import_.level,
-                import_.modules,
-                import_.names,
-            )
-        elif import_.type in {ImportType.THIRD_PARTY}:
-            return (
-                import_.type,
-                package,
-                import_.is_from,
-                import_.level,
-                import_.modules,
-                import_.names,
-            )
-        else:
-            return (
-                import_.type,
-                package,
-                import_.is_from,
-                import_.level,
-                import_.modules,
-                import_.names,
-            )
+        package = "" if import_.package is None else import_.package.lower()
+        type = import_.type or ImportType.APPLICATION_RELATIVE
+        is_from = import_.is_from or False
+        level = import_.level or 0
+        modules = import_.modules or ()
+        names = import_.names or ()
+        return (
+            type,
+            is_from,
+            package,
+            level,
+            modules,
+            names,
+        )
 
     @staticmethod
     def same_section(previous, current):
