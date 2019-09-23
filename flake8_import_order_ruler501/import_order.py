@@ -29,19 +29,32 @@ class Ruler501ImportOrderStyle(Style):
     @staticmethod
     def import_key(import_):
         package = "" if import_.package is None else import_.package.lower()
-        type = import_.type or ImportType.APPLICATION_RELATIVE
+        type = import_.type or ImportType.FUTURE
         is_from = import_.is_from or False
         level = import_.level or 0
         modules = import_.modules or ()
         names = import_.names or ()
-        return (
-            type,
-            is_from,
-            package,
-            level,
-            modules,
-            names,
-        )
+        if type == ImportType.STDLIB:            
+            return (
+                type,
+                is_from,
+                package,
+                False,
+                level,
+                modules,
+                names,
+            )
+        else:
+            return (
+                type,
+                True,
+                package,
+                is_from,
+                level,
+                modules,
+                names,
+            )
+
 
     @staticmethod
     def same_section(previous, current):
